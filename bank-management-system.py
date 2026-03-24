@@ -23,6 +23,7 @@ def acc_no():
 def create_acc():
     name=input("Enter the name of account holder:")
     num=acc_no()
+    print(f"Your Account number is:{num}")
     balance=int(input("Enter the amount:"))
     with open("bank.txt","a") as f:
         f.write(f"{name},{num},{balance}\n")
@@ -60,6 +61,7 @@ def deposit():
             record[2]+=amount
             write_data(data)
             print("Amount deposited")
+            print(f"Your current balace is{record[2]}")
             return
     print("Account not found")
 def withdraw():
@@ -74,6 +76,7 @@ def withdraw():
                 record[2]-=amount
                 write_data(data)
                 print("Withdrawal successsful")
+                print(f"Your current balace is{record[2]}")
                 return
     print("Account not found")
 def delete_acc():
